@@ -1,0 +1,30 @@
+// subsetproducer.h
+//
+// By Sebastian Raaphorst, 2006.
+//
+// Given a set size and a subset size, create all subsets
+// of that size, and for each one, invoke a callback.
+
+
+#ifndef SUBSETPRODUCER_H
+#define SUBSETPRODUCER_H
+
+class SubsetProducer
+{
+protected:
+  // This class offers only static methods, and hence is not constructable.
+  SubsetProducer();
+  virtual ~SubsetProducer();
+
+public:
+  // Given a base set size and a subset size, produce all subsets of the base
+  // set. For each one, invoke the callback function, which takes the set size,
+  // the subset size, the subset, and a piece of user data cast as a void*.
+  static void createAllSubsets(int, int, void (*)(int, int, int*, void*), void* = 0);
+
+private:
+  // Internal backtracking method used by createAllSubsets.
+  static void backtrackAllSubsets(int, int, int*, int, void (*)(int, int, int*, void*), void*);
+};
+
+#endif

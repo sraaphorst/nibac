@@ -1,0 +1,105 @@
+// common.h
+//
+// By Sebastian Raaphorst, 2003
+//
+// Things common to many source files.
+
+// To make this code work for Microsoft Windows with CPLEX, we need to
+// uncomment the following two lines and make sure that the CPLEX include
+// directory is compiled with every file.
+//#include <ilcplex/ilocplex.h>
+//ILOSTLBEGIN
+
+#ifndef COMMON_H
+#define COMMON_H
+
+// Include the assert library
+#include <assert.h>
+
+// Include stdio for BUFSIZ and stdlib for others.
+#include <stdio.h>
+#include <stdlib.h>
+
+#ifdef DEBUG
+#include <iostream>
+#endif
+
+#ifndef TRUE
+#define TRUE 1
+#endif
+#ifndef FALSE
+#define FALSE 0
+#endif
+
+#ifndef EXIT_SUCCESS
+#define EXIT_SUCCESS 0
+#endif
+#ifndef EXIT_FAILURE
+#define EXIT_FAILURE 1
+#endif
+
+#ifndef BUFSIZ
+#define BUFSIZ 4096
+#endif
+
+#ifndef EPSILON
+// If a floating point number b is within (a-EPSILON, a+EPSILON), for all intents and purposes,
+// it is considered to be a.
+#define EPSILON 1e-3
+#endif
+
+#ifndef VARINTEPSILON
+// If a variable is within VARINTEPSILON of an integer, is is considered to be that integer.
+#define VARINTEPSILON 1e-3
+#endif
+
+// Some macros
+#define fabs(x) (x < 0 ? -(x) : x)
+
+// Used to measure if a variable is integer.
+// We test against x and against x+1 as if x = 0.9999999999, x - (int)x = 0.9999999999, but
+// x - (int)(x+1) = -0.0000000001.
+#define isint(x) (fabs(x - ((int)(x))) < VARINTEPSILON || fabs(((int)x) - (x) + 1) < VARINTEPSILON)
+
+// Tests if a variable is 0.
+#define iszero(x) (x > -VARINTEPSILON && x < VARINTEPSILON)
+
+// Tests if something is 1.
+#define isone(x) (x > 1-VARINTEPSILON && x < 1+VARINTEPSILON)
+
+// Tests, with rounding error, if one double is less than another.
+#define lessthan(x, y) (y - (x) > EPSILON)
+
+// Tests, with rounding error, if one double is greater than another.
+#define greaterthan(x, y) (x - (y) > EPSILON)
+
+// Tests, with rounding error, if two doubles are equal.
+#define equals(x, y) (iszero(x - (y)))
+
+// A macro to round, which works similar to integer testing
+#define round(x) (fabs(((int)(x)) - (x) + 1) < EPSILON ? ((int)(x))+1 : (int)(x))
+
+// A macro to round variable values, which works similar to integer testing
+#define varround(x) (fabs(((int)(x)) - (x) + 1) < VARINTEPSILON ? ((int)(x))+1 : (int)(x))
+
+// A macro to take the floor.
+#define floor(x) (((double)((int)(x)+1)-(x)) < EPSILON ? (((int)(x))+1) : ((int)(x)))
+
+// A macro to take the ceiling.
+#define ceil(x) (((x)-((double)((int)(x)))) < EPSILON ? ((int)(x)) : (((int)(x))+1))
+
+// Senses for constraints. This could be included in Constraint, but due to the abstraction,
+// this would make things ugly. Better to make it global.
+enum Sense {
+  LESSTHAN,
+  EQUALS,
+  GREATERTHAN
+};
+
+// A macro to test if a constraint is unviolated, i.e. if b1 - EPSILON <= eval <= b2 + EPSILON.
+#define isunviolated(eval,b1,b2) ((b1 - EPSILON <= eval) && (eval <= b2 + EPSILON))
+
+// A macro to test if a constraint is violated, i.e. if eval <= b1 - EPSILON or  eval >= b2 + EPSILON
+#define isviolated(eval,b1,b2) ((b1 - eval <= EPSILON) || (eval - b2 >= EPSILON))
+
+#endif
