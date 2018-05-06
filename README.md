@@ -38,6 +38,6 @@ http://users.cecs.anu.edu.au/~bdm/nauty
 
 # Final notes
 
-The core code for nibac is contained in `src`.
+The core code for nibac is contained in [`src`](src).
 
-Examples using nibac are contained in `examples` and are not built by default.
+Examples using nibac are contained in [`examples`](examples) and are not built by default.
