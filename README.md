@@ -11,9 +11,9 @@ It is based in part on a series of papers by Francois Margot in order to produce
 
 While I am trying to clean it up for public distribution, this code is messy and disorganized. Use at your own risk.
 
-It still compiles, provided you set the paths properly in `src/Makefile`. After installing `glpk` and `nauty` (see below), you should `make` and then `make install`. The examples should then properly compile. While `nauty` is not yet built into the final library, the plan is to include it.
+It still compiles, provided you set the paths properly in `src/Makefile`. After installing `glpk` and `nauty` (see below), you should `make` and then `make install`. The examples should then properly compile. While nauty is not yet built into the final library, the plan is to include it.
 
-Right now things might break as I am migrating from a plain makefile to `CMake` for configuration of the project and to include `nauty` in the final library to facilitate usage. I am working in CLion and thus, there are CLion project files included in the repository.
+Right now things might break as I am migrating from a plain makefile to `CMake` for configuration of the project and to include nauty in the final library to facilitate usage. I am working in CLion and thus, there are CLion project files included in the repository.
 
 # LP Solver
 
@@ -22,7 +22,7 @@ nibac requires the use of an external LP solver in order to solve LPs at each no
 You can obtain it here:
 http://ftp.gnu.org/gnu/glpk/glpk-4.47.tar.gz
 
-I intend to write a plugin for `Clp`, the COIN-OR LP solver. More information can be found here:
+I intend to write a plugin for Clp, the COIN-OR LP solver. More information can be found here:
 
 https://projects.coin-or.org/Clp
 
@@ -30,9 +30,9 @@ It was last tested with CPLEX 7; as I no longer have access to CPLEX and it is a
 
 # nauty
 
-Brendan McKay's `nauty` (released under the Apache License 2.0) is also necessary. We recommend version 22, and as it doesn't install nicely and comes with many features unnecessary for nibac, we include a heavily pared down bare-bones version in [`extern_src/nauty22`](extern_src/nauty22/README.md) that, when the update to this project is completed, should be configured, built, and bundled automatically in the final nibac library. In the interim, you will have to provide access to the headers and `.o` files by modifying [`src/Makefile`](src/Makefile).
+Brendan McKay's nauty (released under the Apache License 2.0) is also necessary. We recommend version 22, and as it doesn't install nicely and comes with many features unnecessary for nibac, we include a heavily pared down bare-bones version in [`extern_src/nauty22`](extern_src/nauty22/README.md) that, when the update to this project is completed, should be configured, built, and bundled automatically in the final nibac library. In the interim, you will have to provide access to the headers and `.o` files by modifying [`src/Makefile`](src/Makefile).
 
-For more information about `nauty`, please visit:
+For more information about nauty, please visit:
 
 http://users.cecs.anu.edu.au/~bdm/nauty
 
