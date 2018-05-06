@@ -36,4 +36,7 @@ clean:
 
 
 install:
-	cp nautil.o naugraph.o nauty.o @prefix@
+    mkdir -p @prefix@/lib
+    mkdir -p @prefix@/include
+	cp nautil.o naugraph.o nauty.o @prefix@/lib
+    cp nauty.h @prefix@/include
