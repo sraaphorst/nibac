@@ -1,5 +1,8 @@
 # nibac
-C++ Nonisomorphic Branch-and-Cut
+
+NOTE: This project is being updated and as such, will likely be unstable until stated otherwise!
+
+# C++ Nonisomorphic Branch-and-Cut
 
 This is the code that I used to generate results for my Master's Thesis in computer science.
 It is based in part on a series of papers by Francois Margot in order to produce a branch-and-cut search / generation algorithm where the symmetry group of the problem is either specified or determined, and used to prune nodes from the search space so that only one solution per isomorphism class (i.e. one orbit per the partition of solutions as induced by the symmetry group) is produced.
@@ -11,8 +14,11 @@ It requires the use of an external LP solver in order to solve LPs at each node.
 You can obtain it here:
 http://ftp.gnu.org/gnu/glpk/glpk-4.47.tar.gz
 
-Brendan McKay's `nauty` is also necessary. We recommend version 22, which can be found here:
-http://users.cecs.anu.edu.au/~bdm/nauty/nauty22.tar.gz
+Brendan McKay's `nauty` (released under the Apache License 2.0) is also necessary. We recommend version 22, and as it doesn't install nicely and comes with many features unnecessary for nibac, we include a heavily pared down bare-bones version that should be configured, built, and bundled automatically in the final nibac library.
+
+For more information about `nauty`, please visit:
+
+http://users.cecs.anu.edu.au/~bdm/nauty
 
 There may be an issue for some compilers with regards to this version of `nauty` due to the use of a function called `getline`, which interferes with a stdlib `getline`. If this is the case, the `getline` in the `nauty` code should be renamed (e.g. `getline2`).
 
