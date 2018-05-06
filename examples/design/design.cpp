@@ -4,6 +4,7 @@
 
 #include <sstream>
 #include <vector>
+#include <getopt.h>
 #include <baclibrary.h>
 #include "colexicographicvariableorder.h"
 #include "specialcliquecutproducer.h"

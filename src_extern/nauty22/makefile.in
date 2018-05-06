@@ -1,0 +1,39 @@
+# makefile for nauty 2.2
+# Stripped down to bare essential components for use in nibac.
+# Modified by Sebastian Raaphorst, 2018.
+
+# @configure_input@
+
+SHELL = /bin/sh
+CC=@CC@
+CFLAGS=@CFLAGS@ @MORECFLAGS@
+SAFECFLAGS=@CFLAGS@
+LDFLAGS=@LIBS@
+LOK=@lok@         # 0 if no 64-bit integers
+TESTPROGS=@testprogs@
+BIGTEST=1         # set to 0 if less than 512MB is available
+
+SMALL=-DMAXN=WORDSIZE
+BIG=-DBIGNAUTY
+L1=-DMAXN=WORDSIZE -DWORDSIZE=64
+W1=-DMAXN=WORDSIZE -DWORDSIZE=32
+S1=-DMAXN=WORDSIZE -DWORDSIZE=16
+S=-DWORDSIZE=16
+L=-DWORDSIZE=64
+FOURK=-DMAXN=4096
+
+all : nautil.o naugraph.o nauty.o
+
+nautil.o: nauty.h nautil.c
+	${CC} -c ${CFLAGS} nautil.c
+nauty.o: nauty.h nauty.c
+	${CC} -c ${CFLAGS} nauty.c
+naugraph.o: nauty.h naugraph.c
+	${CC} -c ${CFLAGS} naugraph.c
+
+clean:
+	rm -f *.o config.log config.cache config.status
+
+
+install:
+	cp nautil.o naugraph.o nauty.o @prefix@
