@@ -30,7 +30,7 @@ It was last tested with CPLEX 7; as I no longer have access to CPLEX and it is a
 
 # nauty
 
-Brendan McKay's nauty (released under the Apache License 2.0) is also necessary. We recommend version 22, and as it doesn't install nicely and comes with many features unnecessary for nibac, we include a heavily pared down bare-bones version in [`extern_src/nauty22`](extern_src/nauty22/README.md) that, when the update to this project is completed, should be configured, built, and bundled automatically in the final nibac library. In the interim, you will have to provide access to the headers and `.o` files by modifying [`src/Makefile`](src/Makefile).
+Brendan McKay's nauty (released under the Apache License 2.0) is also necessary. We recommend version 22, and as it doesn't install nicely and comes with many features unnecessary for nibac, we include a heavily pared down bare-bones version in [`src_extern/nauty22`](src_extern/nauty22) that, when the update to this project is completed, should be configured, built, and bundled automatically in the final nibac library. In the interim, you will have to provide access to the headers and `.o` files by modifying [`src/Makefile`](src/Makefile).
 
 For more information about nauty, please visit:
 
