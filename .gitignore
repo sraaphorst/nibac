@@ -4,6 +4,8 @@ CMakeFiles
 CMakeScripts
 Testing
 Makefile
+makefile
+src_extern/nauty/makefile
 cmake_install.cmake
 install_manifest.txt
 compile_commands.json

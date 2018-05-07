@@ -1,6 +1,8 @@
-// lpsolver.cpp
-//
-// By Sebastian Raaphorst, 2003.
+/**
+ * lpsolver.cpp
+ *
+ * By Sebastian Raaphorst, 2003 - 2018.
+ */
 
 #include "common.h"
 #include "node.h"
@@ -15,7 +17,3 @@ LPSolver::LPSolver()
   instance = this;
 }
 
-
-LPSolver::~LPSolver()
-{
-}
