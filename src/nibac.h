@@ -1,14 +1,13 @@
-// baclibrary.h
-//
-// By Sebastian Raaphorst, 2004.
-//
-// Includes all relevant headers for the baclibrary.
-//
-// $Author$
-// $Date$
+/**
+ * nibac.h
+ *
+ * By Sebastian Raaphorst, 2003 - 2018.
+ *
+ * Includes all the relevant headers for NIBAC so that there is no need to include them individually.
+ */
 
-#ifndef BACLIBRARY_H
-#define BACLIBRARY_H
+#ifndef NIBAC_H
+#define NIBAC_H
 
 #include "common.h"
 #include "bac.h"

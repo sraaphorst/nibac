@@ -1,6 +1,8 @@
-// lexicographicvariableorder.cpp
-//
-// By Sebastian Raaphorst, 2006.
+/**
+ * lexicographicvariableorder.cpp
+ *
+ * By Sebastian Raaphorst, 2003 - 2018.
+ */
 
 #include <string.h>
 #include <algorithm>
@@ -13,33 +15,11 @@
 #include "variableorder.h"
 
 
-LexicographicVariableOrder::LexicographicVariableOrder()
-{
-}
-
-
-LexicographicVariableOrder::~LexicographicVariableOrder()
-{
-}
-
-
 void LexicographicVariableOrder::sort(int len, const int *src, int *dst)
 {
   memcpy(dst, src, len * sizeof(int));
   std::sort(dst, dst+len);
 }
-
-
-// *** LEXICOGRAPHICVARIABLEORDERCREATOR METHODS ***
-LexicographicVariableOrderCreator::LexicographicVariableOrderCreator()
-{
-}
-
-
-LexicographicVariableOrderCreator::~LexicographicVariableOrderCreator()
-{
-}
-
 
 std::map< std::string, std::pair< std::string, std::string > > LexicographicVariableOrderCreator::getOptionsMap(void)
 {

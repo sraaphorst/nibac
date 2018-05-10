@@ -1,6 +1,8 @@
-// glpksolver.cpp
-//
-// By Sebastian Raaphorst, 2006.
+/**
+ * glpksolver.cpp
+ *
+ * By Sebastian Raaphorst, 2013 - 2018.
+ */
 
 #include <assert.h>
 extern "C" {
@@ -13,16 +15,6 @@ extern "C" {
 #include "node.h"
 #include "common.h"
 #include "glpksolver.h"
-
-
-GLPKSolver::GLPKSolver()
-{
-}
-
-
-GLPKSolver::~GLPKSolver()
-{
-}
 
 
 void GLPKSolver::setupFormulation(Formulation &f)

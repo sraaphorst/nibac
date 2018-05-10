@@ -1,6 +1,8 @@
-// cliquecutproducer.cpp
-//
-// By Sebastian Raaphorst, 2004.
+/**
+ * cliquecutproducer.cpp
+ *
+ * By Sebastian Raaphorst, 2003 - 2018.
+ */
 
 #include <map>
 #include <string>

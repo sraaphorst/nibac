@@ -5,51 +5,395 @@
 		<Option title="nibac"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\nauty22-prefix\;CMake Files\nauty22-prefix\tmp\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\nauty22-prefix\;CMake Files\nauty22-prefix\tmp\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/vorpal/Development/C++/nibac"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/vorpal/Development/C++/nibac"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/vorpal/Development/C++/nibac"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/vorpal/Development/C++/nibac"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/vorpal/Development/C++/nibac"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/Users/vorpal/Development/C++/nibac"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/Users/vorpal/Development/C++/nibac"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="nauty22">
 				<Option working_dir="/Users/vorpal/Development/C++/nibac"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 nauty22"/>
-					<CompileFile command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 nauty22"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nibac">
+				<Option output="/Users/vorpal/Development/C++/nibac/src/libnibac.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/vorpal/Development/C++/nibac/src"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/vorpal/Development/C++/nibac/src"/>
+					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/../../../../../../include/c++/7.3.0"/>
+					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/../../../../../../include/c++/7.3.0/x86_64-apple-darwin16.7.0"/>
+					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/../../../../../../include/c++/7.3.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/src/Makefile&quot;  VERBOSE=1 nibac"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nibac/fast">
+				<Option output="/Users/vorpal/Development/C++/nibac/src/libnibac.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/vorpal/Development/C++/nibac/src"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/vorpal/Development/C++/nibac/src"/>
+					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/../../../../../../include/c++/7.3.0"/>
+					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/../../../../../../include/c++/7.3.0/x86_64-apple-darwin16.7.0"/>
+					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/../../../../../../include/c++/7.3.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/src/Makefile&quot;  VERBOSE=1 nibac/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/vorpal/Development/C++/nibac/src/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/bac.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/bac.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/bacoptions.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/bacoptions.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/bitstring.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/bitstring.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/block.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/block.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/blockgroup.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/blockgroup.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/branchingscheme.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/branchingscheme.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/cliquecutproducer.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/cliquecutproducer.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/closestvaluebranchingscheme.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/closestvaluebranchingscheme.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/commandlineprocessing.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/commandlineprocessing.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/common.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/constraint.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/constraint.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/cutproducer.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/cutproducer.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/defaultsolutionmanager.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/defaultsolutionmanager.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/formulation.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/formulation.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/generatedgroup.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/generatedgroup.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/graph.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/graph.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/group.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/group.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/immediatesolutionmanager.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/immediatesolutionmanager.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/isomorphismcut.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/isomorphismcut.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/isomorphismcutproducer.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/isomorphismcutproducer.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/lexicographicvariableorder.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/lexicographicvariableorder.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/lowestindexbranchingscheme.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/lowestindexbranchingscheme.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/lpsolver.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/lpsolver.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/margotbac.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/margotbac.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/margotbacoptions.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/margotbacoptions.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/matrix.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/matrix.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/matrixgroup.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/matrixgroup.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/nibac.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/nibac_design.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/nibacexception.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/nibacexception.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/node.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/node.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/nodestack.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/nodestack.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/permutationpool.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/permutationpool.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/problem.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/problem.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/randomvariableorder.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/randomvariableorder.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/rankedbranchingscheme.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/rankedbranchingscheme.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/schreiersimsgroup.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/schreiersimsgroup.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/solutionmanager.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/statistics.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/statistics.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/subsetproducer.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/subsetproducer.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/superduper.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/superduper.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/timer.cpp">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/timer.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/util.h">
+			<Option target="nibac"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/variableorder.h">
+			<Option target="nibac"/>
+		</Unit>
 		<Unit filename="/Users/vorpal/Development/C++/nibac/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/Users/vorpal/Development/C++/nibac/src/common.h.in">
+			<Option virtualFolder="CMake Files\src\"/>
 		</Unit>
 		<Unit filename="/Users/vorpal/Development/C++/nibac/nauty22-prefix/tmp/nauty22-cfgcmd.txt.in">
 			<Option virtualFolder="CMake Files\nauty22-prefix\tmp\"/>
