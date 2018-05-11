@@ -2,6 +2,8 @@
 #
 # By Sebastian Raaphorst, 2003 - 2018.
 
+include_directories(../src_extern/nauty22)
+
 set(PUBLIC_HEADER_FILES
         common.h
         bac.h

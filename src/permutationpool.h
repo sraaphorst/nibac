@@ -4,10 +4,6 @@
  * By Sebastian Raaphorst, 2003 - 2018.
  */
 
-//
-// $Author$
-// $Date$
-
 #ifndef PERMUTATIONPOOL_H
 #define PERMUTATIONPOOL_H
 
@@ -45,10 +41,11 @@ namespace vorpal::nibac {
         virtual ~PermutationPool();
 
     public:
-        static void createPool(int
-#ifndef NOPERMPOOL, int= 100000, double= 0.5
+#ifndef NOPERMPOOL
+        static void createPool(int, int = 10000, double = 0.5);
+#else
+        static void createPool(int);
 #endif
-        );
 
         static void deletePool();
 

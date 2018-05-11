@@ -8,6 +8,7 @@
 #define GROUP_H
 
 #include <set>
+#include <string.h>
 #include "common.h"
 #include "permutationpool.h"
 

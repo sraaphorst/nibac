@@ -18,7 +18,7 @@ namespace vorpal::nibac {
      *  abstract class that contains the functionality needed to calculate symmetry groups.
      *  The Schreier-Sims scheme is an example of a concrete subclass of this class.
      */
-    class GeneratedGroup final : public Group {
+    class GeneratedGroup : public Group {
     public:
         GeneratedGroup() = default;
         virtual ~GeneratedGroup() = default;

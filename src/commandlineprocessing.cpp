@@ -623,12 +623,10 @@ namespace vorpal::nibac {
 
     void CommandLineProcessing::outputOptionsMap(std::ostream &out,
                                                  const std::map <std::string, std::pair<std::string, std::string>> &optionsMap) {
-        auto begin = optionsMap.cbegin();
-        auto end   = optionsMap.cend();
-        for (; begin != end; ++begin) {
-            std::string optionName = (*iter).first;
-            std::string optionDescription = (*iter).second.first;
-            std::string optionDefault = (*iter).second.second;
+        for (auto option : optionsMap){
+            std::string optionName = option.first;
+            std::string optionDescription = option.second.first;
+            std::string optionDefault = option.second.second;
             out << "\t" << optionName << " \t " << optionDescription
                 << " (default: " << optionDefault << ")" << std::endl;
         }

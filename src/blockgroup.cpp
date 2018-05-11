@@ -41,7 +41,7 @@ namespace vorpal::nibac::design {
 
     void BlockGroup::vertexPermutationToBlockPermutation(int v, int k, int lambda, int *vertexPermutation,
                                                          int *blockPermutation) {
-      int numberDistinctBlocks = C[v][k];
+      int numberDistinctBlocks = SuperDuper::C(v, k);
       int *block = new int[k];
       int *permutedBlock = new int[k];
       int destination;

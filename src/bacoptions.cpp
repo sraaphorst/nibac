@@ -38,11 +38,11 @@ namespace vorpal::nibac {
               CP_ACTIVITY_TOLERANCE(CP_ACTIVITY_TOLERANCE_DEFAULT),
               BB_LBOUND(BB_LBOUND_DEFAULT),
               BB_UBOUND(BB_UBOUND_DEFAULT),
-              branchingScheme(false),
-              solutionManager(0),
+              branchingScheme(nullptr),
+              solutionManager(nullptr),
               keepcuts(keepcutsDefault),
               manualFixingsFlag(false),
-              exportFileName(0) {
+              exportFileName(nullptr) {
     }
 
 

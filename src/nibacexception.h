@@ -81,13 +81,12 @@ namespace vorpal::nibac {
     template<typename T>
     class IllegalParameterException final : public DetailedException {
     public:
-        IllegalParameterException(const char *paramname, T &&paramvalue, const char *description = nullptr)
+        IllegalParameterException(const char *paramname, T paramvalue, const char *description = nullptr)
                 : DetailedException(createDescription(paramname, paramvalue, description)) {
         }
 
     private:
-        template<typename T>
-        static const std::string createDescription(const char *paramname, T &&paramvalue, const char *description) {
+        static const std::string createDescription(const char *paramname, T paramvalue, const char *description) {
             std::ostringstream stream;
             stream << "Illegal parameter specified (name: \"" << paramname << "\", value: \"" << paramvalue << "\")";
             if (description)
