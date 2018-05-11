@@ -59,21 +59,21 @@ namespace vorpal::nibac {
         friend class CommandLineProcessing;
 
     protected:
-        VariableOrderCreator();
+        VariableOrderCreator() = default;
 
     public:
-        virtual ~VariableOrderCreator();
+        virtual ~VariableOrderCreator() = default;
 
     protected:
-        virtual std::string getVariableOrderName(void) = 0;
+        virtual std::string getVariableOrderName() = 0;
 
-        virtual std::map<std::string, std::pair<std::string, std::string> > getOptionsMap(void) = 0;
+        virtual std::map<std::string, std::pair<std::string, std::string> > getOptionsMap() = 0;
 
         virtual bool processOptionsString(const char *) = 0;
 
         // Make create protected so that users do not accidentally call
         // this, which would result in memory leakage.
-        virtual VariableOrder *create(void) const = 0;
+        virtual VariableOrder *create() const = 0;
     };
 };
 #endif

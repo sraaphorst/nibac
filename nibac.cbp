@@ -95,6 +95,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/vorpal/Development/C++/nibac/src"/>
+					<Add directory="/Users/vorpal/Development/C++/nibac/src/../src_extern/nauty22"/>
 					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/../../../../../../include/c++/7.3.0"/>
 					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/../../../../../../include/c++/7.3.0/x86_64-apple-darwin16.7.0"/>
 					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/../../../../../../include/c++/7.3.0/backward"/>
@@ -121,6 +122,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/vorpal/Development/C++/nibac/src"/>
+					<Add directory="/Users/vorpal/Development/C++/nibac/src/../src_extern/nauty22"/>
 					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/../../../../../../include/c++/7.3.0"/>
 					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/../../../../../../include/c++/7.3.0/x86_64-apple-darwin16.7.0"/>
 					<Add directory="/usr/local/Cellar/gcc@7/7.3.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.3.0/../../../../../../include/c++/7.3.0/backward"/>

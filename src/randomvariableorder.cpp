@@ -4,7 +4,8 @@
  * By Sebastian Raaphorst, 2003 - 2018.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
+#include <cstring>
 #include <map>
 #include <sstream>
 #include <string>
@@ -65,8 +66,8 @@ namespace vorpal::nibac {
     }
 
 
-    RandomVariableOrderCreator::RandomVariableOrderCreator()
-            : numberVariables(-1) {
+    RandomVariableOrderCreator::RandomVariableOrderCreator(const int nv)
+            : numberVariables(nv) {
     }
 
 
@@ -120,9 +121,9 @@ namespace vorpal::nibac {
     }
 
 
-    VariableOrder *RandomVariableOrderCreator::create(void) const {
+    VariableOrder *RandomVariableOrderCreator::create() const {
         if (numberVariables <= 0)
             throw MissingDataException("RandomVariableOrderCreator requires numberVariables to be populated.");
-        return new RandomVariableOrder(numberVariables);
+        return new RandomVariableOrder { numberVariables };
     }
 };

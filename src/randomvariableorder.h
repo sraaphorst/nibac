@@ -13,6 +13,8 @@
 #include "variableorder.h"
 
 namespace vorpal::nibac {
+    class VariableOrder;
+
     /** This subclass of VariableOrder provides a completely random ordering on the
      * variables it is given. It requires that the RNG consisting of random() in cstdlib
      * be seeded using srandom() for the desired unpredictability, or by calling
@@ -27,7 +29,7 @@ namespace vorpal::nibac {
 
     public:
         // Static method to initialize the RNG, if users do not wish to do so manually.
-        static void initializeRNG(void);
+        static void initializeRNG();
 
         RandomVariableOrder(int);
         virtual ~RandomVariableOrder();
@@ -49,25 +51,25 @@ namespace vorpal::nibac {
         int numberVariables;
 
     public:
-        RandomVariableOrderCreator();
+        RandomVariableOrderCreator(const int);
         virtual ~RandomVariableOrderCreator() = default;
 
         inline void setNumberVariables(int pnumberVariables) { numberVariables = pnumberVariables; }
 
-        inline int getNumberVariables(void) const { return numberVariables; }
+        inline int getNumberVariables() const { return numberVariables; }
 
     private:
-        inline std::string getVariableOrderName(void) override {
+        inline std::string getVariableOrderName() override {
             return std::string("Random variable ordering");
         }
 
-        std::map <std::string, std::pair<std::string, std::string>> getOptionsMap(void) override;
+        std::map <std::string, std::pair<std::string, std::string>> getOptionsMap() override;
 
         bool processOptionsString(const char *) override;
 
         // Make create protected so that users do not accidentally call
         // this, which would result in memory leakage.
-        VariableOrder *create(void) const override;
+        VariableOrder *create() const override;
     };
 };
 #endif

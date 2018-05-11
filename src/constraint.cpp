@@ -91,8 +91,8 @@ namespace vorpal::nibac {
         return createConstraint(formulation,
                                 ppositions,
                                 pcoefficients,
-                                ((sense == EQUALS || sense == GREATERTHAN) ? pbound : INT_MIN),
-                                ((sense == EQUALS || sense == LESSTHAN) ? pbound : INT_MAX));
+                                ((sense == EQ || sense == GT) ? pbound : INT_MIN),
+                                ((sense == EQ || sense == LT) ? pbound : INT_MAX));
     }
 
 
@@ -104,8 +104,8 @@ namespace vorpal::nibac {
         return createConstraint(formulation,
                                 length,
                                 ppositions,
-                                ((sense == EQUALS || sense == GREATERTHAN) ? pbound : INT_MIN),
-                                ((sense == EQUALS || sense == LESSTHAN) ? pbound : INT_MAX));
+                                ((sense == EQ || sense == GT) ? pbound : INT_MIN),
+                                ((sense == EQ || sense == LT) ? pbound : INT_MAX));
     }
 
 
@@ -128,8 +128,8 @@ namespace vorpal::nibac {
         return new Constraint(formulation,
                               positions,
                               coefficients,
-                              ((sense == EQUALS || sense == GREATERTHAN) ? pbound : INT_MIN),
-                              ((sense == EQUALS || sense == LESSTHAN) ? pbound : INT_MAX));
+                              ((sense == EQ || sense == GT) ? pbound : INT_MIN),
+                              ((sense == EQ || sense == LT) ? pbound : INT_MAX));
     }
 
 

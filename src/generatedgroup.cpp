@@ -177,7 +177,7 @@ namespace vorpal::nibac {
         for (i = 0; i < x; ++i)
             refinement[i].resize(ilp.getNumberRows());
 
-        // Precalculate the partitioning sceme
+        // Precalculate the partitioning scheme
         // We do this as follows:
         // For each column of our original matrix, we determine where each
         // coefficient can be mapped, and this information is stored in a
@@ -371,35 +371,33 @@ namespace vorpal::nibac {
 
         // Process the objective function.
         const std::vector<int> &objective = ilp.getObjectiveFunction();
-        std::vector<int>::const_iterator vobjbeginIter = objective.begin();
-        std::vector<int>::const_iterator vobjendIter = objective.end();
+        auto vobjbeginIter = objective.cbegin();
+        auto vobjendIter = objective.cend();
         for (int i = 0; vobjbeginIter != vobjendIter; ++vobjbeginIter, ++i)
             (sorted[*vobjbeginIter]).insert(i);
 
         // We now have several colour classes, one for each coefficient.
-        std::map < int, std::set < int > > ::iterator
-        msbeginIter = sorted.begin();
-        std::map < int, std::set < int > > ::iterator
-        msendIter = sorted.end();
+        auto msbeginIter = sorted.begin();
+        auto msendIter = sorted.end();
         for (; msbeginIter != msendIter; ++msbeginIter)
             colourclasses.push_back((*msbeginIter).second);
 
         // Now, for each constraint, partition the colours.
-        const std::map<unsigned long, Constraint *> &constraints = ilp.getConstraints();
-        std::map<unsigned long, Constraint *>::const_iterator cbeginIter = constraints.begin();
-        std::map<unsigned long, Constraint *>::const_iterator cendIter = constraints.end();
+        const auto &constraints = ilp.getConstraints();
+        auto cbeginIter = constraints.begin();
+        auto cendIter = constraints.end();
         for (; cbeginIter != cendIter; ++cbeginIter) {
             Constraint *constraint = (*cbeginIter).second;
 
             // For each constraint, we sort by coefficient using a technique similar to above
             // with the objective function.
             sorted.clear();
-            std::vector<int> &positions = constraint->getPositions();
-            std::vector<int>::iterator vpbeginIter = positions.begin();
-            std::vector<int>::iterator vpendIter = positions.end();
-            std::vector<int> &coefficients = constraint->getCoefficients();
-            std::vector<int>::iterator vcbeginIter = coefficients.begin();
-            std::vector<int>::iterator vcendIter = coefficients.end();
+            auto &positions = constraint->getPositions();
+            auto vpbeginIter = positions.begin();
+            auto vpendIter = positions.end();
+            auto &coefficients = constraint->getCoefficients();
+            auto vcbeginIter = coefficients.begin();
+            auto vcendIter = coefficients.end();
             for (; vpbeginIter != vpendIter; ++vpbeginIter, ++vcbeginIter)
                 (sorted[*vcbeginIter]).insert(*vpbeginIter);
 
@@ -424,10 +422,8 @@ namespace vorpal::nibac {
 
                 // Now we determine the intersection of this coefficient set with each preexisting
                 // colour class.
-                std::vector < std::set < int > > ::iterator
-                ccbeginIter = colourclasses.begin();
-                std::vector < std::set < int > > ::iterator
-                ccendIter = colourclasses.end();
+                auto ccbeginIter = colourclasses.begin();
+                auto ccendIter = colourclasses.end();
 
                 // This will make a list of new colour classes, which we want to record (as opposed
                 // to modifying the old list, which will mess up iterators).
@@ -435,11 +431,11 @@ namespace vorpal::nibac {
 
                 for (; ccbeginIter != ccendIter; ++ccbeginIter) {
                     // Fetch this colour class.
-                    std::set<int> &colourclass = *ccbeginIter;
+                    auto &colourclass = *ccbeginIter;
 
                     // Determine the intersection with the coefficient set.
                     std::set<int> intersection;
-                    std::insert_iterator <std::set<int>> ii_intersection(intersection, intersection.begin());
+                    std::insert_iterator <std::set<int>> ii_intersection { intersection, intersection.begin() };
                     std::set_intersection(coeffset.begin(), coeffset.end(),
                                           colourclass.begin(), colourclass.end(),
                                           ii_intersection);
@@ -447,7 +443,7 @@ namespace vorpal::nibac {
                     // If the intersection is trivial, the colour class completely contains the
                     // coefficient set, or the coefficient set completely contains the colour
                     // class, then we have nothing to do.
-                    if (intersection.size() == 0
+                    if (intersection.empty()
                         || intersection.size() == coeffset.size()
                         || intersection.size() == colourclass.size()) {
                         newcolourclasses.push_back(colourclass);
@@ -462,7 +458,7 @@ namespace vorpal::nibac {
                     // We have already calculated B above (intersection), so it simply remains to calculate
                     // A (difference).
                     std::set<int> difference;
-                    std::insert_iterator <std::set<int>> ii_difference(difference, difference.begin());
+                    std::insert_iterator <std::set<int>> ii_difference { difference, difference.begin() };
                     std::set_difference(colourclass.begin(), colourclass.end(),
                                         coeffset.begin(), coeffset.end(),
                                         ii_difference);
@@ -485,27 +481,23 @@ namespace vorpal::nibac {
         std::map < int, std::map < int, std::set < int > > > sortedconstraints;
         cbeginIter = constraints.begin();
         cendIter = constraints.end();
-        for (int vertexnumber = c; cbeginIter != cendIter; ++cbeginIter, ++vertexnumber) {
-            Constraint *constraint = (*cbeginIter).second;
+        for (auto vertexnumber = c; cbeginIter != cendIter; ++cbeginIter, ++vertexnumber) {
+            auto *constraint = (*cbeginIter).second;
             ((sortedconstraints[constraint->getLowerBound()])[constraint->getUpperBound()]).insert(vertexnumber);
         }
 
         // Assign the colour classes by traversing the data structure.
-        std::map < int, std::map < int, std::set < int > > > ::iterator
-        sortedcbeginIter = sortedconstraints.begin();
-        std::map < int, std::map < int, std::set < int > > > ::iterator
-        sortedcendIter = sortedconstraints.end();
+        auto sortedcbeginIter = sortedconstraints.begin();
+        auto sortedcendIter = sortedconstraints.end();
         for (; sortedcbeginIter != sortedcendIter; ++sortedcbeginIter) {
-            std::map<int, std::set<int> > &tmpmap = (*sortedcbeginIter).second;
-            std::map < int, std::set < int > > ::iterator
-            tmpbeginIter = tmpmap.begin();
-            std::map < int, std::set < int > > ::iterator
-            tmpendIter = tmpmap.end();
+            auto &tmpmap = (*sortedcbeginIter).second;
+            auto tmpbeginIter = tmpmap.begin();
+            auto tmpendIter = tmpmap.end();
 
             for (; tmpbeginIter != tmpendIter; ++tmpbeginIter) {
                 // Create a colour class out of the set of int simply by inserting it into the new position in the
                 // collection of colour classes.
-                std::set<int> &colourclass = (*tmpbeginIter).second;
+                auto &colourclass = (*tmpbeginIter).second;
                 colourclasses.push_back(colourclass);
             }
         }
@@ -513,16 +505,14 @@ namespace vorpal::nibac {
         // *** NAUTY FORMULATION ***
         // We begin by imposing the colouring in a format that nauty will understand.
         // We set the labeling and the ptn by iterating over the colour classes.
-        std::vector < std::set < int > > ::iterator
-        ccbeginIter = colourclasses.begin();
-        std::vector < std::set < int > > ::iterator
-        ccendIter = colourclasses.end();
-        int bound = c + r;
-        int count = 0;
+        auto ccbeginIter = colourclasses.begin();
+        auto ccendIter = colourclasses.end();
+        auto bound = c + r;
+        auto count = 0;
         for (; ccbeginIter != ccendIter; ++ccbeginIter) {
-            std::set<int> &colourclass = *ccbeginIter;
-            std::set<int>::iterator tmpbeginIter = colourclass.begin();
-            std::set<int>::iterator tmpendIter = colourclass.end();
+            auto &colourclass = *ccbeginIter;
+            auto tmpbeginIter = colourclass.begin();
+            auto tmpendIter = colourclass.end();
             for (; tmpbeginIter != tmpendIter; ++tmpbeginIter, ++count) {
                 assert(count < bound);
                 lab[count] = *tmpbeginIter;
@@ -534,7 +524,7 @@ namespace vorpal::nibac {
         }
 
         // Make sure all variables were covered.
-        assert(count = bound);
+        assert(count == bound);
 
 #ifdef DEBUG
         std::cerr << "Labeling: ";
@@ -548,7 +538,7 @@ namespace vorpal::nibac {
 #endif
 
         // Clear all the sets in the graph.
-        for (int i = 0; i < bound; ++i) {
+        for (auto i = 0; i < bound; ++i) {
             gv = GRAPHROW(g, i, m);
             EMPTYSET(gv, m);
         }
@@ -557,16 +547,16 @@ namespace vorpal::nibac {
         // to variables contained in it.
         cbeginIter = constraints.begin();
         cendIter = constraints.end();
-        int constraintvertex = c;
+        auto constraintvertex = c;
         for (; cbeginIter != cendIter; ++cbeginIter, ++constraintvertex) {
             gv = GRAPHROW(g, constraintvertex, m);
 
             // Iterate over the positions.
-            Constraint *c = (*cbeginIter).second;
-            std::vector<int>::iterator vpbeginIter = c->getPositions().begin();
-            std::vector<int>::iterator vpendIter = c->getPositions().end();
+            auto *cs = (*cbeginIter).second;
+            auto vpbeginIter = cs->getPositions().begin();
+            auto vpendIter = cs->getPositions().end();
             for (; vpbeginIter != vpendIter; ++vpbeginIter) {
-                int variablevertex = *vpbeginIter;
+                auto variablevertex = *vpbeginIter;
                 ADDELEMENT(gv, variablevertex);
 
                 gv2 = GRAPHROW(g, variablevertex, m);
@@ -587,9 +577,9 @@ namespace vorpal::nibac {
         std::ifstream ifstr(filename);
 
         // Create a permutation over the columns.
-        int *perm = pool->newPermutation();
+        auto *perm = pool->newPermutation();
         int dummy;
-        int index = 0;
+        auto index = 0;
         while (!ifstr.eof()) {
             // Read in an element of a permutation.
             ifstr >> (index < x ? perm[index] : dummy);
@@ -607,7 +597,7 @@ namespace vorpal::nibac {
             if (index % n == 0) {
 #ifdef DEBUG
                 std::cerr << "Entering permutation: \n";
-                for (int i=0; i < x; ++i)
+                for (auto i=0; i < x; ++i)
                     std::cerr << perm[i] << " ";
                 std::cerr << "\n";
 #endif

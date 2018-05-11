@@ -190,7 +190,7 @@ namespace vorpal::nibac {
 
         for (iter = cuts; iter;) {
             Constraint *constraint = Constraint::createConstraint(formulation, iter->getNumberIndices(),
-                                                                  iter->getIndices(), LESSTHAN,
+                                                                  iter->getIndices(), LT,
                                                                   iter->getNumberIndices() - 1);
             node.addCut(constraint);
 
