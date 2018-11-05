@@ -1,6 +1,6 @@
 # nibac
 
-NOTE: This project is being updated and as such, will likely be unstable until stated otherwise!
+**Status:** Complete, but the code is very old (circa 2004). I will likely be rewriting this soon.
 
 # C++ Nonisomorphic Branch-and-Cut
 
